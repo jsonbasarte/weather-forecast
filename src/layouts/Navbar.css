@@ -1,0 +1,10 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    padding: 20px;
+}
+.logo-container {
+    display: flex; 
+    align-items: center;
+}
