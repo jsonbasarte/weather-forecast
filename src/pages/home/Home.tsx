@@ -9,7 +9,7 @@ const Home = () => {
     <Wrapper>
       <div className="home-container">
         <p>{user?.name}</p>
-        <p>https://github.com/jsonbasarte</p>
+        <p><a href="https://github.com/jsonbasarte" target="_blank">https://github.com/jsonbasarte</a></p>
         <input placeholder="City" style={{ width: 400 }} onChange={(e) => setCity(e.target.value)} />
         <button style={{ width: 200, marginTop: 50 }} onClick={() => fetchWeather()}>Display Weather</button>
       </div>
