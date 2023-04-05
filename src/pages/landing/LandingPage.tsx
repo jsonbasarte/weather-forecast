@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import Wrapper from "../../wrapper/Wrapper";
 
 const LandingPage = () => {
-  const { isAuthenticated, loginWithPopup } = useAuth0();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
   if (isAuthenticated) {
     return <Navigate to="/home" />;
   }
@@ -19,7 +19,7 @@ const LandingPage = () => {
         </p>
 
         {!isAuthenticated ? (
-          <button onClick={() => loginWithPopup()}>Login</button>
+          <button onClick={() => loginWithRedirect()}>Login</button>
         ) : null}
       </div>
     </Wrapper>

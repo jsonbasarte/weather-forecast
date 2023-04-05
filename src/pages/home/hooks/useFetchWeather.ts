@@ -6,15 +6,6 @@ import { setWeatherData } from "../../../redux/weather/slicer";
 
 const STATUS_OK = 200;
 
-interface IWeather {
-  date: string;
-  temp: number;
-  description: string;
-  main: string;
-  pressure: number;
-  humidity: number;
-}
-
 export const useFetchWeather = () => {
   const dispatch = useDispatch();
   const [city, setCity] = useState("");
