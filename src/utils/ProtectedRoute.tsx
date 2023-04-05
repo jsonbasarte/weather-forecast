@@ -7,7 +7,6 @@ interface IProps {
 
 const ProtectedRoute: React.FC<IProps> = ({ children }) => {
   const { isAuthenticated } = useAuth0();
-
   return <>{isAuthenticated ? children : null}</>;
 };
 

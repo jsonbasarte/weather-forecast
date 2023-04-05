@@ -1,11 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./layouts/Navbar";
-import { useRedirect } from "./hooks/useRedirect";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  // Redirect to home page if authenticated 
-  useRedirect();
-
   return (
     <>
       <Navbar />

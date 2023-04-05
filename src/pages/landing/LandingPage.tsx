@@ -1,10 +1,13 @@
 import "./LandingPage.css";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Navigate } from "react-router-dom";
 import Wrapper from "../../wrapper/Wrapper";
 
 const LandingPage = () => {
   const { isAuthenticated, loginWithPopup } = useAuth0();
-
+  if (isAuthenticated) {
+    return <Navigate to="/home" />;
+  }
   return (
     <Wrapper>
       <div className="landing-page-container">
