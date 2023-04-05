@@ -1,17 +1,24 @@
-import React from "react";
 import "./Navbar.css";
 import viteLogo from "../assets/react.svg";
-import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  const { isAuthenticated, logout } = useAuth0();
   return (
     <div className="navbar-container">
       <div className="logo-container">
         <img src={viteLogo} className="logo" alt="Vite logo" />
         Weather Forecast
       </div>
-      <button onClick={() => navigate("/")}>Logout</button>
+      {isAuthenticated ? (
+        <button
+          onClick={() =>
+            logout({ logoutParams: { returnTo: window.location.origin } })
+          }
+        >
+          Logout
+        </button>
+      ) : null}
     </div>
   );
 };

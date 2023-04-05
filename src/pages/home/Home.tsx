@@ -1,16 +1,18 @@
-import React from "react";
 import "./Home.css";
+import Wrapper from "../../wrapper/Wrapper";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Home = () => {
+  const { user } = useAuth0();
   return (
-    <React.Fragment>
+    <Wrapper>
       <div className="home-container">
-        <p>Jason Basarte</p>
+        <p>{user?.name}</p>
         <p>https://github.com/jsonbasarte</p>
-        <input placeholder="City" style={{ width: 400 }}/>
+        <input placeholder="City" style={{ width: 400 }} />
         <button style={{ width: 200, marginTop: 50 }}>Display Weather</button>
       </div>
-    </React.Fragment>
+    </Wrapper>
   );
 };
 

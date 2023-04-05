@@ -1,11 +1,12 @@
-import React from "react";
-import "./LandingPage.css"
-import { useNavigate } from "react-router-dom";
+import "./LandingPage.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import Wrapper from "../../wrapper/Wrapper";
 
 const LandingPage = () => {
-  const navigate = useNavigate();
+  const { isAuthenticated, loginWithPopup } = useAuth0();
+
   return (
-    <React.Fragment>
+    <Wrapper>
       <div className="landing-page-container">
         <p>
           {" "}
@@ -14,9 +15,11 @@ const LandingPage = () => {
           city
         </p>
 
-        <button onClick={() => navigate("/home")}>Login</button>
+        {!isAuthenticated ? (
+          <button onClick={() => loginWithPopup()}>Login</button>
+        ) : null}
       </div>
-    </React.Fragment>
+    </Wrapper>
   );
 };
 
