@@ -8,3 +8,21 @@
     display: flex; 
     align-items: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .navbar-container {
+        width: 57vh
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    .navbar-container {
+        width: 73vh
+    }
+}
+
+@media only screen and (max-width: 896px) {
+    .navbar-container {
+        width: 62vh
+    }
+}

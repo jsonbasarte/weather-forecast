@@ -41,7 +41,6 @@ export const useFetchWeather = () => {
       };
       dispatch(setWeatherData(newData));
       navigate("/weather");
-      // setTimeout(() => navigate("/weather"));
     }
   };
 
